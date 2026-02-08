@@ -1,0 +1,187 @@
+/* @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"); */
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+:root {
+  --font-sans:
+    ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji": ui-sans-serif, system-ui, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-mono:
+    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace;
+  --color-amber-500: oklch(0.769 0.188 70.08);
+  --color-amber-600: oklch(0.666 0.179 58.318);
+  --color-amber-700: oklch(0.555 0.163 48.998);
+  --color-amber-800: oklch(0.473 0.137 46.201);
+  --color-amber-900: oklch(0.414 0.112 45.904);
+  --color-green-800: oklch(0.448 0.119 151.328);
+  --color-green-900: oklch(0.393 0.095 152.535);
+  --color-gray-50: oklch(0.985 0.002 247.839);
+  --color-gray-100: oklch(0.967 0.003 264.542);
+  --color-gray-200: oklch(0.928 0.006 264.531);
+  --color-gray-300: oklch(0.872 0.01 258.338);
+  --color-gray-600: oklch(0.446 0.03 256.802);
+  --color-gray-700: oklch(0.373 0.034 259.733);
+  --color-gray-900: oklch(0.21 0.034 264.665);
+}
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-family: var(--font-mono);
+}
+/* Start Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: #000;
+}
+header h1 {
+  font-size: 1.7rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+header .nav {
+  display: flex;
+  gap: 15px;
+}
+header a {
+  color: white;
+  transition: all 0.3s ease;
+}
+header .nav a:hover {
+  color: var(--color-amber-700);
+  font-size: 0.98rem;
+}
+/* End Header */
+/* Start Recipes page */
+.recipes {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  padding: 20px 30px;
+}
+.recipes .recipes-text {
+  text-align: center;
+  word-spacing: -2px;
+  font-weight: 400;
+}
+.recipes .recipes-search {
+  display: block;
+  width: 80%;
+  border: 2px solid var(--color-amber-700);
+  padding: 15px 20px;
+  border-radius: 10px;
+  caret-color: var(--color-amber-700);
+  transition: all 0.3s ease;
+}
+.recipes .recipes-search:focus {
+  border-color: black;
+}
+.recipes .recipes-search::placeholder {
+  font-size: 1.04rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+.recipes .title {
+  align-self: flex-start;
+  color: var(--color-amber-700);
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+.recipes .recipes-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+.recipes-cards .card {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  padding: 20px;
+  border-bottom: 2px solid var(--color-amber-500);
+}
+.recipes-cards .card .card-img {
+  width: 200px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.recipes-cards .card .card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.recipes-cards .card .content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.recipes-cards .card .content .title {
+  color: black;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+.recipes-cards .card .content .title:hover {
+  color: var(--color-amber-700);
+  cursor: default;
+}
+.recipes-cards .card .content .text {
+  color: var(--color-gray-600);
+  font-size: 0.9rem;
+  word-spacing: -1px;
+}
+.recipes-cards .card .content .text span {
+  color: var(--color-gray-700);
+  font-size: 1rem;
+  font-weight: bold;
+}
+.recipes-cards .card .content .btn {
+  color: var(--color-amber-600);
+  transform: scale(1);
+  transition: all 0.3s ease;
+}
+.recipes-cards .card .content .btn:hover {
+  transform: translate(15px) scale(1.05);
+  font-weight: bold;
+  cursor: pointer;
+}
+/* End Recipes page */
+/* Start Footer */
+footer {
+  text-align: center;
+  padding: 15px 20px;
+  color: white;
+  background-color: #000;
+}
+
+/* End Footer */
+/* Responsive */
+@media (max-width: 640px) {
+  header {
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+  }
+  header .nav {
+    gap: 20px;
+  }
+  .recipes-cards .card {
+    flex-direction: column;
+    font-size: 0.9rem;
+  }
+  .recipes-cards .card .card-img {
+    width: 250px;
+  }
+}
