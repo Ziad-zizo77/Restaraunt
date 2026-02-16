@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
 * {
   margin: 0;
   padding: 0;
@@ -8,13 +9,8 @@
   box-sizing: border-box;
 }
 :root {
-  --font-sans:
-    ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-    "Segoe UI Symbol", "Noto Color Emoji": ui-sans-serif, system-ui, sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --font-mono:
-    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
-    "Courier New", monospace;
+  --font-poppins: "Poppins", sans-serif;
+  --font-geist-mono: "Geist Mono", "Geist Mono Fallback";
   --color-amber-500: oklch(0.769 0.188 70.08);
   --color-amber-600: oklch(0.666 0.179 58.318);
   --color-amber-700: oklch(0.555 0.163 48.998);
@@ -37,16 +33,16 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  font-family: var(--font-mono);
+  font-family: var(--font-poppins);
   overflow-x: hidden;
-  max-width: 100vw;
+  max-width: 100svw;
 }
 /*! Start Header */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 20px;
+  padding: 15px 30px;
   background-color: #000;
 }
 header h1 {
@@ -67,9 +63,225 @@ header .nav a:hover {
   color: var(--color-amber-700);
 }
 /* End Header */
+/*? Start Home Page */
+.home section {
+  padding: 30px;
+  text-align: center;
+}
+.home .hero {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+.hero .overlay {
+  width: 100%;
+  height: 100%;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.6);
+  position: relative;
+  z-index: 1;
+}
+.hero .overlay .content {
+  margin: 0 auto;
+  width: 70%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.hero .content p {
+  line-height: 1.6;
+  font-size: 15px;
+  text-align: center;
+}
+.hero .content .btn {
+  margin-top: 20px;
+  padding: 15px 20px;
+  color: white;
+  border-radius: 6px;
+  background-color: var(--color-amber-600);
+  border: 2px solid var(--color-amber-600);
+  transition: all 0.3s ease;
+}
+.hero .content .btn:hover {
+  cursor: pointer;
+  background-color: var(--color-gray-900);
+}
+.home section h2 {
+  color: var(--color-gray-900);
+  margin-bottom: 20px;
+}
+.home section p {
+  color: var(--color-gray-600);
+  margin-bottom: 20px;
+}
+.top-recipes .display-recipes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 0 50px ;
+}
+.display-recipes .card {
+  border: 3px solid var(--color-amber-500);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+.display-recipes .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+.display-recipes .card-img {
+  width: 100%;
+  height: clamp(150px, 200px, 250px);
+  overflow: hidden;
+}
+.display-recipes .card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+}
+.display-recipes .content {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.display-recipes .content h3 {
+  color: var(--color-amber-900);
+  font-size: 1.1rem;
+}
+.display-recipes .content p {
+  text-align: start;
+  color: var(--color-gray-600);
+  line-height: 1.6;
+  font-size: 15px;
+}
+.display-recipes .content .btn {
+  padding: 10px 15px;
+  color: white;
+  border-radius: 6px;
+  background-color: var(--color-amber-600);
+  border: 2px solid var(--color-amber-600);
+  transition: all 0.3s ease;
+}
+.display-recipes .content .btn:hover {
+  cursor: pointer;
+  background-color: var(--color-amber-700);
+}
+.top-chefs .chefs {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+  gap: 20px;
+  margin: 20px 0;
+}
+.chefs .chef {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+.chefs .chef:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+.chefs .chef .img-container {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+}
+.chefs .chef .img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition:all 0.3s ease;
+}
+.chefs .chef:hover img {
+  transform: scale(1.05);
+}
+.chefs .chef .content {
+  padding: 15px;
+  text-align: start;
+}
+.chefs .chef h3 {
+  color: var(--color-gray-900);
+  margin-bottom: 5px;
+}
+.chefs .chef .mark {
+  color: var(--color-amber-600);
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+.chefs .chef .discription {
+  color: var(--color-gray-600);
+  line-height: 1.6;
+  font-size: 15px;
+}
+/* End Home Page */
 /*? Start About Page */
 .about {
-  
+  width: 90%;
+  margin: 30px auto;
+  text-align: center;
+}
+.about .foody-word {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-gray-700);
+}
+.about section h2 {
+  font-size: 2.2rem;
+  font-weight: bolder;
+  font-family: var(--font-poppins);
+  color: var(--color-gray-900);
+}
+.about section p {
+  margin: 10px auto;
+  width: 80%;
+  color: var(--color-gray-600);
+  line-height: 1.6;
+}
+.about .cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.about .cards .card {
+  flex: 1;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+.about .cards .card:hover {
+  transform: scale(1.01);
+  cursor: pointer;
+}
+.about img {
+  max-width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+}
+@media (max-width: 768px) {
+  .about .cards .card {
+    flex: 1 1 50%;
+  }
 }
 /* End About Page */
 /** Start Recipes Page */
@@ -102,7 +314,6 @@ header .nav a:hover {
 .recipes .recipes-search::placeholder {
   font-size: 1.04rem;
   font-weight: 400;
-  letter-spacing: 1px;
 }
 .recipes .title {
   align-self: flex-start;
@@ -178,7 +389,7 @@ header .nav a:hover {
 /** Start Recipe Details Page */
 .details {
   background-color: var(--color-gray-300);
-  font-family: sans-serif;
+  font-family: var(--font-poppins);
 }
 .container {
   padding: 20px;
@@ -223,8 +434,9 @@ header .nav a:hover {
 }
 .details .instructions ol {
   line-height: 1.6;
-  padding:10px;
+  padding: 10px;
   background-color: white;
+  border-radius: 10px;
 }
 .details .btn-recipes {
   width: 100%;
@@ -243,6 +455,91 @@ header .nav a:hover {
   background-color: var(--color-amber-500);
 }
 /* End Recipe Details Page */
+/*? Start Contact Page */
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.contact .container {
+  width: 80%;
+  margin: 0 auto;
+}
+.contact h2 {
+  color: var(--color-gray-900);
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+.contact p {
+  text-align: center;
+  color: var(--color-gray-600);
+  font-size: 16px;
+  line-height: 1.6;
+}
+.contact form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+.contact form .input {
+  width: 80%;
+  position: relative;
+}
+.contact form .input input,
+.contact form .input textarea {
+  padding: 16px 10px 8px;
+  width: 100%;
+  background-color: var(--color-gray-50);
+  box-shadow: 0 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+.contact form .input textarea {
+  resize: vertical;
+  min-height: 40px;
+}
+.contact form .input label {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  font-size: 14px;
+  color: var(--color-gray-600);
+  pointer-events: none;
+  transition: 0.3s ease;
+}
+.contact form .input textarea + label {
+  top: 12px;
+}
+.contact form .input input:focus + label,
+.contact form .input input:not(:placeholder-shown) + label,
+.contact form .input textarea:focus + label,
+.contact form .input textarea:not(:placeholder-shown) + label {
+  top: 4px;
+  font-size: 11px;
+  color: var(--color-green-800);
+  background: var(--color-gray-50);
+  padding: 0 5px;
+}
+
+.contact form .btn {
+  width: fit-content;
+  padding: 15px 30px;
+  border-radius: 6px;
+  font-weight: 500;
+  color: white;
+  background-color: var(--color-amber-500);
+  transition: background-color 0.3s ease;
+}
+.contact form .btn:hover {
+  background-color: var(--color-amber-600);
+  cursor: pointer;
+}
+.contact form .btn:focus {
+  outline: 2px solid var(--color-amber-600);
+  outline-offset: 3px;
+}
+/* End Contact Page */
 /*! Start Footer */
 footer {
   margin-top: auto;

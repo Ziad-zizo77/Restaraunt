@@ -1,8 +1,8 @@
 let params = new URLSearchParams(window.location.search);
 let id = params.get("id");
 let details = document.querySelector(".details-recipes");
-
-fetch(`https://dummyjson.com/recipes/${id}`)
+function getRecipe(url) {
+  fetch(url)
   .then((res) => res.json())
   .then((data) => {
     details.innerHTML = `
@@ -26,8 +26,9 @@ fetch(`https://dummyjson.com/recipes/${id}`)
         </div>
       </div>
     `;
-
     document.querySelector(".btn-recipes").addEventListener("click", () => {
       window.location.href = "./recipes.html";
     });
   });
+}
+getRecipe(`https://dummyjson.com/recipes/${id}`);
